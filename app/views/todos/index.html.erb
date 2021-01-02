@@ -1,11 +1,16 @@
 <div class="container">
-  <h1 class="text-center">Todo Hotwire-Rails</h1>
+  <h1 class="text-center mt-3">Todo Hotwire-Rails</h1>
 
   <%= turbo_stream_from :todos %>
 
-  <%= turbo_frame_tag :todo_form do %>
-    <%= render 'form', todo: @todo %>
-  <% end %>
+<div class="row justify-content-center">
+  <div class="col-12">
+    <%= turbo_frame_tag :todo_form do %>
+      <%= render 'form', todo: @todo %>
+    <% end %>
+  </div>
+</div>
+
 
     <div class="row justify-content-center">
       <div class="col-12">
