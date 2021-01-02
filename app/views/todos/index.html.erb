@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="text-center">Todo Hotwire-Rails</h1>
+
+  <%= turbo_stream_from :todos %>
+
+  <%= turbo_frame_tag :todo_form do %>
+    <%= render 'form', todo: @todo %>
+  <% end %>
+
+    <div class="row justify-content-center">
+      <div class="col-12">
+        <h3>All Todos</h3>
+        <hr>
+        <ul class="list-group list-group-flush">
+        <%= turbo_frame_tag :todos do %>
+          <%= render @todos %>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+</div>

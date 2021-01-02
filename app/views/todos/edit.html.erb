@@ -1,0 +1,6 @@
+<%= turbo_frame_tag dom_id(@todo) do %>
+  <%= content_tag :li, class: "list-group-item #{completed?(@todo)}" do %>
+    <%= render 'form', todo: @todo %>
+    <%= link_to 'Back', todos_path, "data-turbo-frame": "_top", class: 'btn btn-warning btn-sm' %>
+  <% end %>
+<% end %>
