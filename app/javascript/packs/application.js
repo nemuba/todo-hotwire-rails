@@ -13,3 +13,6 @@ import 'bootstrap/dist/css/bootstrap'
 // Rails.start()
 ActiveStorage.start()
 
+
+require("trix")
+require("@rails/actiontext")

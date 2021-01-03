@@ -1,0 +1,17 @@
+<div class="row justify-content-center">
+  <div class="col-10 mt-3">
+    <%= turbo_frame_tag :new_post do %>
+      <h1>Posts</h1>
+      <%= link_to 'Novo Post', new_post_path %>
+    <% end %>
+  </div>
+</div>
+
+<div class="row justify-content-center">
+  <div class="col-10 mt-3">
+    <%= turbo_stream_from :posts %>
+    <%= turbo_frame_tag :posts do %>
+      <%= render @posts %>
+    <% end %>
+  </div>
+</div>

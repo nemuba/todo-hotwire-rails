@@ -1,0 +1,14 @@
+<%= turbo_frame_tag dom_id(post) do %>
+<div class="card my-3" data-controller="post">
+  <div class="card-header">
+    <h2><%=link_to post.title, post_path(post) %></h2>
+  </div>
+  <div class="card-body">
+    <%= post.content %>
+  </div>
+  <div class="card-footer pb-0 d-flex justify-content-between">
+    <p>Created at <%= time_ago_in_words(post.created_at) %></p>
+    <%= button_to 'Excluir', post, method: :delete, class: 'btn btn-danger btn-sm mb-2', 'data-post-action': 'turbo:before-fetch-request->post#confirm' %>
+  </div>
+</div>
+<% end %>
