@@ -2,7 +2,7 @@
   "name": "hotwire-rails",
   "private": true,
   "dependencies": {
-    "@hotwired/turbo-rails": "^7.0.0-beta.2",
+    "@hotwired/turbo-rails": "^7.0.0-beta.3",
     "@rails/actioncable": "^6.0.0",
     "@rails/actiontext": "^6.1.0",
     "@rails/activestorage": "^6.0.0",

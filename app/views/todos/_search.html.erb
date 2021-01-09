@@ -1,0 +1,9 @@
+<%= form_with url: "/todos", method: :get, html: { class: 'form-inline d-flex justify-content-between'} do |form| %>
+  <div class="form-group m-3">
+    <%= form.label :query, "Search for:", class: 'mr-3'%>
+    <%= form.text_field :query, class: 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= form.submit "Search", class: 'btn btn-outline-dark' %>
+  </div>
+<% end %>

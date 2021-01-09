@@ -7,7 +7,7 @@ class TodosController < ApplicationController
   # GET /todos
   # GET /todos.json
   def index
-    @todos = Todo.all
+    @todos = params[:query].present? ? Todo.search(params[:query]) : Todo.all
     @todo = Todo.new
   end
 
@@ -33,7 +33,7 @@ class TodosController < ApplicationController
         format.html { redirect_to todos_url, notice: "Todo was successfully created." }
         format.json { render :show, status: :created, location: @todo }
       else
-        format.html { render :new }
+        format.html { render :new}
         format.json { render json: @todo.errors, status: :unprocessable_entity }
         format.turbo_stream do
           render turbo_stream: turbo_stream.replace(@todo, partial: "todos/form", locals: { todo: @todo })

@@ -6,8 +6,8 @@
           <%= link_to update_completed_path(todo), class: "btn #{todo.completed ? 'btn-outline-dark' : 'btn-outline-info'} btn-sm mr-3" do %>
             <%= todo.completed ? 'Incompleted' : 'Completed' %>
           <% end %>
-          <%= link_to 'Edit', edit_todo_path(todo), class: 'btn btn-success btn-sm mr-3' %>
-          <%= button_to 'Delete', todo, method: :delete,class: 'btn btn-danger btn-sm' %>
+          <%= link_to 'Edit', edit_todo_path(todo), class: 'btn btn-outline-success btn-sm mr-3' %>
+          <%= button_to 'Delete', todo, method: :delete,class: 'btn btn-outline-danger btn-sm' %>
         </div>
       </div>
     <% end %>
