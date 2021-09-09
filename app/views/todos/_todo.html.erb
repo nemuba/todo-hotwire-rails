@@ -3,11 +3,11 @@
       <div class="d-flex justify-content-between">
         <%= link_to todo.title, todo, class: 'btn btn-outline-info' %>
         <div class="d-flex">
-          <%= link_to update_completed_path(todo), class: "btn #{todo.completed ? 'btn-outline-dark' : 'btn-outline-info'} btn-sm mr-3" do %>
+          <%= link_to update_completed_path(todo), class: "btn #{todo.completed ? 'btn-outline-success' : 'btn-outline-danger'} btn-sm mr-3" do %>
             <%= todo.completed ? 'Incompleted' : 'Completed' %>
           <% end %>
           <%= link_to 'Edit', edit_todo_path(todo), class: 'btn btn-outline-success btn-sm mr-3' %>
-          <%= button_to 'Delete', todo, method: :delete,class: 'btn btn-outline-danger btn-sm' %>
+          <%= button_to 'Delete', todo, method: :delete, class: 'btn btn-outline-danger btn-sm', data: { confirm: 'Deletar ?'} %>
         </div>
       </div>
     <% end %>
